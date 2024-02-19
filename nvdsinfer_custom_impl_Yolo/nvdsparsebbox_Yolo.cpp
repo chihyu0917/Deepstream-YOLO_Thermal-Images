@@ -70,7 +70,17 @@ addBBoxProposal(const float bx1, const float by1, const float bx2, const float b
 
   bbi.detectionConfidence = maxProb;
   bbi.classId = maxIndex;
+
+  /* print the information
+   * Modified by Sophie H.
+  */
+  std::cout << "Detected Object Class ID: " << bbi.classId << ", Confidence: " << bbi.detectionConfidence << std::endl;
+  std::cout << "Bounding Box (LTWH): (" << bbi.left << ", " << bbi.top << ", " << bbi.width << ", " << bbi.height << ")" << std::endl;
+  /* Feb 19 2024
+  */
+
   binfo.push_back(bbi);
+
 }
 
 static std::vector<NvDsInferParseObjectInfo>
